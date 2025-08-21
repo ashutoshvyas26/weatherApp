@@ -1,0 +1,29 @@
+
+id = respone.id  
+main = respone.main  
+description = respone.description  
+icon = respone.icon    
+base = respone.base  
+main = respone.main  
+temp = respone.temp  
+feels_like = respone.feels_like  
+temp_min = respone.temp_min  
+temp_max = respone.temp_max  
+pressure = respone.pressure  
+humidity = respone.humidity  
+sea_level = respone.sea_level  
+grnd_level = respone.grnd_level  
+visibility = respone.visibility  
+wind = respone.wind  
+speed = respone.speed  
+deg = respone.deg  
+
+
+
+
+    document.getElementById("temp").innerHTML = main.data.temp;
+    document.getElementById("feels_like").innerHTML = main.data.feels_like;
+    document.getElementById("temp_min").innerHTML = main.data.temp_min;
+    document.getElementById("temp_max").innerHTML = main.data.temp_max;
+    document.getElementById("humidity").innerHTML = main.data.humidity;
+    document.getElementById("sea_level").innerHTML = main.data.sea_level;

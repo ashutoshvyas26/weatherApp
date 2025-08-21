@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Weather App</title>
+        <link rel="stylesheet" href="style.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+            crossorigin="anonymous">
+    </head>
+    <body class="bg-secondary-subtle">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">                
+                    <form id="searchForm" class="d-flex" role="search">
+                        <input class="form-control me-2" id="city" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success" id="searchBtn" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <h1 class="text-center pt-2 pb-3 fw-bold text-dark"><span id="cityHeading"></span></h1>
+
+
+        <div class="container">
+            
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col "> 
+                    <div class="card mb-4 rounded-3 shadow-sm border-dark">
+                        <div class="card-header py-3 bg-dark border-dark">
+                            <h4 class="my-0 fw-bold text-light" >Temperature</h4>
+                        </div> 
+                        <div class="card-body bg-secondary text-light"> <h1 class="card-title pricing-card-title"><span id="temp"></span>°C </h1>
+                            <ul class="list-unstyled mt-3 mb-4"> 
+                                <li>Feels like <span id="feels_like"></span>°</li> 
+                                <li>Min temp <span id="temp_min"></span>°</li> 
+                                <li>Max temp <span id="temp_max"></span>°</li> 
+                            </ul>  
+                        </div> 
+                    </div> 
+                </div>
+                
+                <div class="col"> 
+                    <div class="card mb-4 rounded-3 shadow-sm border-dark">
+                        <div class="card-header py-3 bg-dark border-dark">
+                            <h4 class="my-0 fw-bold text-light">Condtition</h4>
+                        </div> 
+                        <div class="card-body bg-secondary text-light"> <h1 class="card-title pricing-card-title"><span id="description"></span><img src="http://openweathermap.org/img/wn/01d.png" alt="Weather icon"></h1>
+                            <ul class="list-unstyled mt-3 mb-4"> 
+                                <li>Clouds: <span id="clouds"></span> %</li> 
+                                <li>Visibility: <span id="visibility"></span>m</li> 
+                                <li>Wind Speed: <span id="wind_speed"></span> km/hr</li> 
+                                <li>Wind Direction: <span id="wind_deg"></span></li> 
+                            </ul>  
+                        </div> 
+                    </div> 
+                </div>
+                <div class="col"> 
+                    <div class="card mb-4 rounded-3 shadow-sm border-dark solar-card">
+                        <div class="card-header py-3 bg-dark border-dark">
+                            <h4 class="my-0 fw-bold text-light">Solar Time</h4>
+                        </div> 
+                        <div class="card-body bg-secondary text-light"> 
+                            <ul class="list-unstyled mt-3 mb-4"> 
+                                <li>Sunrise: <span id="sunrise"></span></li> 
+                                <li>Sunset: <span id="sunset"></span></li> 
+                            </ul>  
+                        </div> 
+                    </div>
+                </div>
+            </div> 
+                 <h2 class="display-6 text-center mb-4 text-dark fw-bold">Popular cities</h2> <div class="table-responsive">
+                    <table class="table text-center table-dark table-hover table-striped">
+                    <thead> 
+                        <tr> 
+                            <th style="width: 28%;"></th> 
+                            <th style="width: 24%;">Hamilton</th> 
+                            <th style="width: 24%;">Vancouver</th> 
+                            <th style="width: 24%;">Toronto</th> 
+                        </tr>
+                    </thead> 
+                    <tbody> 
+                        <tr> 
+                            <th scope="row" class="text-start">Temperature</th> 
+                            <td>
+                                <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                    <use xlink:href="#check"></use>
+                                </svg>
+                                    <span id="h_temp"></span>°C
+                            </td>
+                            <td>
+                                    <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                        <use xlink:href="#check"></use>
+                                    </svg>
+                                    <span id="v_temp"></span>°C
+                                </td>
+
+                                <td>
+                                    <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                        <use xlink:href="#check"></use>
+                                    </svg>
+                                    <span id="t_temp"></span>°C
+                                </td>
+                        </tr> 
+                        <tr> 
+                            <th scope="row" class="text-start">Feels like</th> 
+                                <td>
+                                    <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                        <use xlink:href="#check"></use>
+                                    </svg>
+                                    <span id="h_feels_like"></span>°C
+                                </td>
+                           <td>
+                                <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                    <use xlink:href="#check"></use>
+                                </svg>
+                                    <span id="v_feels_like"></span>°C
+                            </td>
+                            <td>
+                                <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                    <use xlink:href="#check"></use>
+                                </svg>
+                                    <span id="t_feels_like"></span>°C
+                            </td>
+                        </tr>
+                        
+                        <tr> 
+                            <th scope="row" class="text-start">Min Temperature</th> 
+                            <td>
+                                <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                    <use xlink:href="#check"></use>
+                                </svg>
+                                    <span id="h_temp_max"></span>°C
+                            </td>
+                            <td>
+                                    <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                        <use xlink:href="#check"></use>
+                                    </svg>
+                                    <span id="v_temp_max"></span>°C
+                                </td>
+
+                                <td>
+                                    <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                        <use xlink:href="#check"></use>
+                                    </svg>
+                                    <span id="t_temp_max"></span>°C
+                                </td>
+                        </tr> 
+                        <tr> 
+                            <th scope="row" class="text-start">Min Temperature</th> 
+                                <td>
+                                    <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                        <use xlink:href="#check"></use>
+                                    </svg>
+                                    <span id="h_temp_min"></span>°C
+                                </td>
+                           <td>
+                                <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                    <use xlink:href="#check"></use>
+                                </svg>
+                                <span id="v_temp_min"></span>°C
+                            </td>
+                            <td>
+                                <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                    <use xlink:href="#check"></use>
+                                </svg>
+                                    <span id="t_temp_min"></span>°C
+                            </td>
+                        </tr> 
+
+                        <tr> 
+                            <th scope="row" class="text-start">Humidity</th> 
+                            <td>
+                                <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                    <use xlink:href="#check"></use>
+                                </svg>
+                                <span id="h_humidity"></span> %   
+                            </td>
+                            <td>
+                                    <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                        <use xlink:href="#check"></use>
+                                    </svg>
+                                    <span id="v_humidity"></span> %
+                                </td>
+
+                                <td>
+                                    <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                        <use xlink:href="#check"></use>
+                                    </svg>
+                                    <span id="t_humidity"></span> %   
+                                </td>
+                        </tr> 
+                        <tr> 
+                            <th scope="row" class="text-start">Sea level</th> 
+                                <td>
+                                    <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                        <use xlink:href="#check"></use>
+                                    </svg>
+                                    <span id="h_sea_level"></span> hPa
+                                    
+                                </td>
+                           <td>
+                                <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                    <use xlink:href="#check"></use>
+                                </svg>
+                                    <span id="v_sea_level"></span> hPa 
+                            </td>
+                            <td>
+                                <svg class="bi" width="24" height="24" role="img" aria-label="Included">
+                                    <use xlink:href="#check"></use>
+                                </svg>
+                                    <span id="t_sea_level"></span> hPa
+                            </td>
+                        </tr> 
+                    </tbody> 
+                </table> 
+            </div>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+            crossorigin="anonymous"></script>
+        <script src="script.js" type="module"></script>
+
+    </body>
+</html>
