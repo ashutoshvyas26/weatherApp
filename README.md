@@ -48,3 +48,22 @@ Replace the API key in script.js with your own from OpenWeather.
 
 📄 License
 This project is open-source and available under the MIT License.
+
+---
+
+## 🔑 API Key Notice
+This project uses the **OpenWeather API** for fetching weather data. 
+
+⚠️ **For demo purposes, the API key is currently included in the source code (`script.js`).** 
+
+In a production environment, this should be handled via:
+- Environment variables
+- Backend proxy server
+- Serverless functions
+
+**To use this project:**
+1. Get your free API key from [OpenWeather](https://openweathermap.org/api)
+2. Replace the `apiKey` variable in `script.js` with your key
+3. Monitor your API usage to stay within the free tier limits (1,000 calls/day)
+
+---

@@ -123,9 +123,5 @@ try {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    getWeather("Mississauga");
-});
-
 
 
