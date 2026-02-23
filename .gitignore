@@ -1,5 +1,5 @@
 # API Keys and sensitive data
-config.js
+# config.js is tracked for demo purposes (free tier API key)
 .env
 .env.local
 
