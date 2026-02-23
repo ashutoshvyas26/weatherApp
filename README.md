@@ -142,23 +142,25 @@ cd weatherApp
 ```
 
 ### Step 3: Configure Your API Key
-```bash
-# Copy the example config file
-cp config.example.js config.js
+The `config.js` file is already included with a demo API key, so you can use the app immediately!
 
-# Open config.js in your editor and replace:
+**For local development with your own API key:**
+```bash
+# Create a new config.js with your API key:
 # const CONFIG = {
 #     API_KEY: "YOUR_API_KEY_HERE"
-# };
-# 
-# With your actual API key:
-# const CONFIG = {
-#     API_KEY: "2b72929a5ce379f7014e1f54728a5eae"  # Example
 # };
 ```
 
 ### Step 4: Run the App
 Simply open `index.html` in your web browser. That's it! No build process, no dependencies to install, no server setup needed.
+
+---
+
+## 🚀 Live Demo
+Visit the live version on GitHub Pages: **[https://ashutoshvyas26.github.io/weatherApp/](https://ashutoshvyas26.github.io/weatherApp/)**
+
+The app is fully functional and ready to use!
 
 ---
 
@@ -219,9 +221,9 @@ weatherApp/
 - Timezone calculation for accurate local time display
 
 **config.js**
-- Stores your OpenWeather API key
+- Stores the OpenWeather API key (included with demo key)
 - Loaded before script.js to provide API_KEY global variable
-- NOT included in GitHub (in .gitignore)
+- Tracked in GitHub for demo purposes (free tier account)
 
 ---
 
@@ -258,26 +260,25 @@ The app uses a mobile-first approach with breakpoints optimized for all device s
 ## Security Considerations
 
 ### API Key Protection
-Your OpenWeather API key is valuable and should be protected:
+The `config.js` file is included in this repository with a demo API key for immediate use:
 
-✅ **What We Do Right**
-- Store API key in `config.js` (not tracked by Git)
-- Provide `config.example.js` as a safe template
-- Add `config.js` to `.gitignore`
-- Never commit sensitive credentials
+✅ **What's Included**
+- Demo API key from a free tier OpenWeather account
+- Limited to 1,000 API calls per day
+- No financial risk if exposed
+- No stored personal data
 
-⚠️ **Important Reminders**
-- Don't share your API key publicly
-- Regenerate your key if accidentally exposed
-- Monitor your API usage at OpenWeather dashboard
-- Free tier allows 1,000 API calls per day
+⚠️ **Important for Production**
+- If upgrading to a paid tier, regenerate your API key immediately
+- Never expose paid tier API keys in public repositories
+- For production apps, use environment variables or a backend proxy
 
-### Best Practices
-1. Keep `config.js` locally only
-2. Always set API keys in environment files
-3. Use different keys for development and production
-4. Monitor API usage regularly
-5. Regenerate keys periodically
+🔐 **Best Practices for Local Development**
+1. Create a new `config.js` with your own API key for development
+2. Use `config.example.js` as a template
+3. Monitor your API usage at OpenWeather dashboard
+4. Regenerate keys if accidentally exposed in paid accounts
+5. Use different keys for development and production environments
 
 ---
 
